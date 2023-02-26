@@ -13,17 +13,18 @@ orange = (255, 165, 0)
 yellow = (255, 255, 0)
 sky_blue = (0, 255, 255)
 grass_green = (106, 168, 79)
-WIDTH = 450
-HEIGHT = 300
-floor_y = 255
+#450, 300
+WIDTH = 900
+HEIGHT = 600
+floor_y = 510
 
 #game variables
 score = 0
 high_score = 0
 player_x = 50
 player_y = floor_y - 10
-player_width = 30
-player_height = 50
+player_width = 60
+player_height = 100
 x_change = 0
 y_change = 0
 gravity = 1
@@ -42,12 +43,12 @@ obstacles = [mtd_obstacle, snowman_obstacle, squirrel_obstacle]
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption("The Runs")
 fps = 60
-font = pygame.font.Font('freesansbold.ttf', 16)
-title_font = pygame.font.Font('freesansbold.ttf', 32)
+font = pygame.font.Font('freesansbold.ttf', 24)
+title_font = pygame.font.Font('freesansbold.ttf', 64)
 timer = pygame.time.Clock()
 
 BACKGROUND_IMAGE = pygame.image.load("RunsWorking\game\\background.jpg")
-PLAYER_IMAGE = pygame.image.load('RunsWorking\game\modified_char_dude.png').convert()
+PLAYER_IMAGE = pygame.image.load('modified_char_dude.png').convert()
 MTD_IMAGE = pygame.image.load('RunsWorking\game\mtd.png').convert()
 SNOWMAN_IMAGE = pygame.image.load('RunsWorking\game\snowman.png').convert()
 SQUIRREL_IMAGE = pygame.image.load('RunsWorking\game\squirrel.png').convert()
@@ -64,9 +65,9 @@ while running:
     screen.blit(BACKGROUND_IMAGE, (0, 0))
     if not active:
         welcome_text = title_font.render(f'The Runs', True, black, sky_blue)
-        screen.blit(welcome_text, ((WIDTH / 2) - 85, HEIGHT - 250))
+        screen.blit(welcome_text, ((WIDTH / 2) - 165, HEIGHT - 550))
         instruction_text = font.render(f'Press [SPACE] to start', True, black, sky_blue)
-        screen.blit(instruction_text, ((WIDTH / 2) - 95, HEIGHT - 200))
+        screen.blit(instruction_text, ((WIDTH / 2) - 150, HEIGHT - 400))
     score_text = font.render(f'Score: {score}', True, white, grass_green)
     screen.blit(score_text, ((WIDTH / 2) - 130, HEIGHT - 30))
     high_score_text = font.render(f'High Score: {high_score}', True, white, grass_green)
@@ -100,11 +101,11 @@ while running:
                 active = True
         if event.type == pygame.KEYDOWN and active:
             if event.key == pygame.K_SPACE and y_change == 0:
-                y_change = 18
+                y_change = 20
             if event.key == pygame.K_RIGHT:
-                x_change = 5
+                x_change = 10
             if event.key == pygame.K_LEFT:
-                x_change = -5
+                x_change = -10
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
                 x_change = 0
