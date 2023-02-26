@@ -19,7 +19,7 @@ floor_y = 220
 score = 0
 high_score = 0
 player_x = 50
-player_y = floor_y
+player_y = floor_y - 10
 player_width = 20
 player_height = 20
 x_change = 0
@@ -44,6 +44,10 @@ fps = 60
 font = pygame.font.Font('freesansbold.ttf', 16)
 timer = pygame.time.Clock()
 
+IMAGE = pygame.image.load('game\\think.jpeg').convert()
+# Create a rect with the size of the image.
+IMAGE = pygame.transform.scale(IMAGE, (player_width, player_height))
+
 running = True
 while running:
     timer.tick(fps)
@@ -58,11 +62,13 @@ while running:
     high_score_text = font.render(f'High Score: {high_score}', True, white, black)
     screen.blit(high_score_text, ((WIDTH / 2) + 40, HEIGHT - 50))
     floor = pygame.draw.rect(screen, white, [0, floor_y, WIDTH, 5])
-    player = pygame.draw.rect(screen, green, [player_x, player_y, player_width, player_height])
+    player = IMAGE.get_rect()
+    player.center = (player_x, player_y)
+    screen.blit(IMAGE, (player_x, player_y)) #updates player position
     obstacle0 = pygame.draw.rect(screen, red, [obstacles[0][0], floor_y - obstacles[0][2], obstacles[0][1], obstacles[0][2]])
     obstacle1 = pygame.draw.rect(screen, orange, [obstacles[1][0], floor_y - obstacles[1][2], obstacles[1][1], obstacles[1][2]])
     obstacle2 = pygame.draw.rect(screen, yellow, [obstacles[2][0], floor_y - obstacles[2][2], obstacles[2][1], obstacles[2][2]])
-
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -119,6 +125,5 @@ while running:
     if player_y == floor_y - player_height and y_change < 0:
         y_change = 0
     
-
     pygame.display.flip()
 pygame.quit()
