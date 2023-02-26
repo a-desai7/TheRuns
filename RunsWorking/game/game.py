@@ -44,7 +44,7 @@ fps = 60
 font = pygame.font.Font('freesansbold.ttf', 16)
 timer = pygame.time.Clock()
 
-IMAGE = pygame.image.load('game\\think.jpeg').convert()
+IMAGE = pygame.image.load('RunsWorking\game\modified_char_dude.png').convert()
 # Create a rect with the size of the image.
 IMAGE = pygame.transform.scale(IMAGE, (player_width, player_height))
 
