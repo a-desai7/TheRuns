@@ -81,7 +81,7 @@ cv.destroyAllWindows()
 image = io.imread(r"camera.jpg")  
 
 downsample_by = 4  # new image will be 1/14th of the original in size
-palette = 9  # find 7 colors
+palette = 15  # find 7 colors
 
 # 1) Instantiate Pyx transformer
 pyx = Pyx(factor=downsample_by, palette=palette)
