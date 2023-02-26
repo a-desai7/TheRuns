@@ -96,4 +96,4 @@ new_image = pyx.transform(image)
 # save new image with 'skimage.io.imsave()'
 io.imsave("pixel.png", new_image)
 
-subprocess.run(['python', 'DropImage.py'])
+# subprocess.run(['python', 'DropImage.py'])
