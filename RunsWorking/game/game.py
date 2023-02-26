@@ -1,9 +1,24 @@
 ## https://youtu.be/ZV8TNrwqG1Y
 import pygame 
 import random 
-
+from pygame.locals import *
 pygame.init()
+import subprocess
 
+screen = pygame.display.set_mode([900, 600])
+pygame.display.set_caption("The Runs")
+def show_title_screen():
+    title_screen = pygame.image.load(r"RunsWorking\game\title_screen.jpg").convert()
+    title_screen = pygame.transform.scale(title_screen, (900,600))
+    screen.blit(title_screen, (0, 0))
+    pygame.display.update()
+    start_ticks = pygame.time.get_ticks()
+    while pygame.time.get_ticks() - start_ticks < 10000:
+        pygame.event.pump()
+
+
+show_title_screen()
+subprocess.run(['python', 'RunsWorking\pyxelate\Cam_Main.py'])
 #game constants 
 white = (255, 255, 255)
 black = (0,0,0)
