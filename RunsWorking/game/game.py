@@ -35,7 +35,7 @@ mtd_start_pos = random.randint(WIDTH + 50, WIDTH + 200)
 snowman_start_pos = random.randint(WIDTH + 50, WIDTH + 200)
 squirrel_start_pos = random.randint(WIDTH + 50, WIDTH + 200)
 mtd_obstacle = [mtd_start_pos, 3 * player_width, player_height, 1.25 * obstacles_speed]
-snowman_obstacle = [snowman_start_pos, player_width, 2 * player_height, 0.5 * obstacles_speed]
+snowman_obstacle = [snowman_start_pos, player_width, 1.5 * player_height, 0.5 * obstacles_speed]
 squirrel_obstacle = [squirrel_start_pos, 0.5 * player_width, 0.5* player_height, 2 * obstacles_speed]
 obstacles = [mtd_obstacle, snowman_obstacle, squirrel_obstacle]
 
