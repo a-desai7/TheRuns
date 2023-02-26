@@ -48,7 +48,7 @@ title_font = pygame.font.Font('freesansbold.ttf', 64)
 timer = pygame.time.Clock()
 
 BACKGROUND_IMAGE = pygame.image.load("RunsWorking\game\\background.jpg")
-PLAYER_IMAGE = pygame.image.load('modified_char_dude.png').convert()
+PLAYER_IMAGE = pygame.image.load('RunsWorking\pyxelate\modified_char_dude.png').convert()
 MTD_IMAGE = pygame.image.load('RunsWorking\game\mtd.png').convert()
 SNOWMAN_IMAGE = pygame.image.load('RunsWorking\game\snowman.png').convert()
 SQUIRREL_IMAGE = pygame.image.load('RunsWorking\game\squirrel.png').convert()

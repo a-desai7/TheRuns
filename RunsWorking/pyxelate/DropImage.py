@@ -1,8 +1,8 @@
 import PIL
 from PIL import Image, ImageDraw, ImageFilter
 
-CharDude = Image.open('result (1).png')
-person = Image.open('pixel.png')
+CharDude = Image.open(r'RunsWorking\pyxelate\result (1).png')
+person = Image.open('RunsWorking\pyxelate\pixel.png')
 
 reSizedPerson = person.resize((1200,550), resample=None, box=None, reducing_gap=None)
 
@@ -32,4 +32,4 @@ y_offset = 10
 CharDude_copy.paste(im_crop, (x_offset, y_offset))
 
 # Save the modified image to a file
-CharDude_copy.save('modified_char_dude.png')
+CharDude_copy.save('RunsWorking\pyxelate\modified_char_dude.png')

@@ -94,6 +94,6 @@ pyx.fit(image)
 new_image = pyx.transform(image)
 
 # save new image with 'skimage.io.imsave()'
-io.imsave("pixel.png", new_image)
+io.imsave("RunsWorking\pyxelate\pixel.png", new_image)
 
-# subprocess.run(['python', 'DropImage.py'])
+subprocess.run(['python', 'RunsWorking\pyxelate\DropImage.py'])
