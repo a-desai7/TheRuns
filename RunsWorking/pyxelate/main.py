@@ -3,7 +3,8 @@ from pyxelate import Pyx, Pal
 # program to capture single image from webcam in python
 import cv2 as cv
 import time 
-  
+import subprocess
+
 # SET THE COUNTDOWN TIMER
 # for simplicity we set it to 3
 # We can also take this as input
@@ -94,3 +95,5 @@ new_image = pyx.transform(image)
 
 # save new image with 'skimage.io.imsave()'
 io.imsave("pixel.png", new_image)
+
+subprocess.run(['python', 'DropImage.py'])
