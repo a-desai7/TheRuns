@@ -43,6 +43,7 @@ screen = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption("The Runs")
 fps = 60
 font = pygame.font.Font('freesansbold.ttf', 16)
+title_font = pygame.font.Font('freesansbold.ttf', 32)
 timer = pygame.time.Clock()
 
 BACKGROUND_IMAGE = pygame.image.load("RunsWorking\game\\background.jpg")
@@ -62,10 +63,10 @@ while running:
     timer.tick(fps)
     screen.blit(BACKGROUND_IMAGE, (0, 0))
     if not active:
-        welcome_text = font.render(f'The Runs', True, black, sky_blue)
-        screen.blit(welcome_text, ((WIDTH / 2) - 50, HEIGHT - 250))
+        welcome_text = title_font.render(f'The Runs', True, black, sky_blue)
+        screen.blit(welcome_text, ((WIDTH / 2) - 85, HEIGHT - 250))
         instruction_text = font.render(f'Press [SPACE] to start', True, black, sky_blue)
-        screen.blit(instruction_text, ((WIDTH / 2) - 90, HEIGHT - 200))
+        screen.blit(instruction_text, ((WIDTH / 2) - 95, HEIGHT - 200))
     score_text = font.render(f'Score: {score}', True, white, grass_green)
     screen.blit(score_text, ((WIDTH / 2) - 130, HEIGHT - 30))
     high_score_text = font.render(f'High Score: {high_score}', True, white, grass_green)
